@@ -28,6 +28,8 @@ import {
 } from '@nebular/theme';
 import { StoreModule } from '@ngrx/store';
 import { reducers, metaReducers } from './reducers';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from '../environments/environment';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -67,6 +69,7 @@ export function HttpLoaderFactory(http: HttpClient) {
         strictActionImmutability: true
       }
     }),
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
   ],
   bootstrap: [AppComponent],
   providers: [ImplicitAutenticationService,
