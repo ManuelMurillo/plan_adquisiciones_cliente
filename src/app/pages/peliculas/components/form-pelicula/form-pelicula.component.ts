@@ -16,36 +16,36 @@ export class FormPeliculaComponent implements OnInit {
     private fb: FormBuilder,
     private clasificacionesService: ClasificacionesService,
     private peliculaService: PeliculasService,
-    ) { }
+  ) { }
 
   ngOnInit() {
     this.clasificacionesService.getClasificaciones().subscribe((data: any) => {
       this.Clasificaciones = data;
       this.CrearFormulario();
-    })
+    });
   }
 
   CrearFormulario(data?: any) {
-    if (data ) {
+    if (data) {
       this.PeliculaForm = this.fb.group({
-        id: [data.id,[]],
-        nombre: [data.nombre,[]],
-        director: [data.director,[]],
-        clasificacion: [this.Clasificaciones.find((element: any) => element.id === data.clasificacion.id),[]],
+        id: [data.id, []],
+        nombre: [data.nombre, []],
+        director: [data.director, []],
+        clasificacion: [this.Clasificaciones.find((element: any) => element.id === data.clasificacion.id), []],
       });
     } else {
       this.PeliculaForm = this.fb.group({
-        id: [null,[]],
-        nombre: [null,[]],
-        director: [null,[]],
-        clasificacion: [null,[]],
+        id: [null, []],
+        nombre: [null, []],
+        director: [null, []],
+        clasificacion: [null, []],
       });
     }
   }
 
   OnSubmit() {
-    console.log(this.PeliculaForm.value);
-    this.peliculaService.postPelicula(this.PeliculaForm.value).subscribe(() => {});
+    // console.log(this.PeliculaForm.value);
+    this.peliculaService.postPelicula(this.PeliculaForm.value).subscribe(() => { });
   }
 
 }
