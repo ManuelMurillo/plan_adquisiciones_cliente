@@ -8,9 +8,9 @@ const routes: Routes = [{
   component: PagesComponent,
   children: [
     {
-      path: 'prueba',
-      loadChildren: () => import('./primer-modulo/primer-modulo.module')
-      .then(m => m.PrimerModuloModule),
+      path: 'peliculas',
+      loadChildren: () => import('./peliculas/peliculas.module')
+      .then(m => m.PeliculasModule),
     },
     {
       path: '',
