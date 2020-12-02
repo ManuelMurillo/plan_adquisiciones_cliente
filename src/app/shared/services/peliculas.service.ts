@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -5,5 +6,9 @@ import { Injectable } from '@angular/core';
 })
 export class PeliculasService {
 
-  constructor() { }
+  constructor(private httpService: HttpClient) { }
+
+  getClasificaciones() {
+    return this.httpService.get('http://localhost:3000/clasificaciones');
+  }
 }
