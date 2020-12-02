@@ -67,11 +67,11 @@ export function HttpLoaderFactory(http: HttpClient) {
     StoreModule.forRoot(reducers, {
       metaReducers,
       runtimeChecks: {
-        strictStateImmutability: true,
-        strictActionImmutability: true
+        strictStateImmutability: false,
+        strictActionImmutability: false
       }
     }),
-    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
+    !environment.production ? StoreDevtoolsModule.instrument({}): [],
     EffectsModule.forRoot([AppEffects]),
   ],
   bootstrap: [AppComponent],
