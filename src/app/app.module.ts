@@ -71,7 +71,7 @@ export function HttpLoaderFactory(http: HttpClient) {
         strictActionImmutability: false
       }
     }),
-    !environment.production ? StoreDevtoolsModule.instrument({}): [],
+    !environment.production ? StoreDevtoolsModule.instrument({}) : [],
     EffectsModule.forRoot([AppEffects]),
   ],
   bootstrap: [AppComponent],
