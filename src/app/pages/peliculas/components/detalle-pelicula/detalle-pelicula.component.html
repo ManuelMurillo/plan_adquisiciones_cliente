@@ -1,11 +1,11 @@
-<div class="container">
+<div class="container" *ngIf="Pelicula">
     <div class="row">
         <div class="col">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">Nombre</h5>
-                    <p class="card-text">Director</p>
-                    <p class="card-text">Clasificacion</p>
+                    <h5 class="card-title">{{Pelicula.nombre}}</h5>
+                    <p class="card-text">{{Pelicula.director}}</p>
+                    <p class="card-text">{{Pelicula.clasificacion.nombre}}</p>
                 </div>
             </div>
         </div>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'ngx-detalle-pelicula',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./detalle-pelicula.component.scss']
 })
 export class DetallePeliculaComponent implements OnInit {
+
+  @Input() Pelicula: any;
 
   constructor() { }
 

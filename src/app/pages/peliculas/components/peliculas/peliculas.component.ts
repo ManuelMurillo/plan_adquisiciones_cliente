@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PeliculasService } from '../../services/peliculas.service';
 
 @Component({
   selector: 'ngx-peliculas',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PeliculasComponent implements OnInit {
 
-  constructor() { }
+  Peliculas: any;
+
+  constructor(
+    private peliculasService: PeliculasService,
+  ) { }
 
   ngOnInit() {
+    this.peliculasService.getPeliculas().subscribe((data: any) => {
+      this.Peliculas = data;
+    })
   }
 
 }

@@ -14,8 +14,8 @@ export class PeliculasService {
   getPelicula(id: any) {
     return this.httpService.get('http://localhost:3000/peliculas/' + id);
   }
-  postPelicula(id: any, data: any) {
-    return this.httpService.post('http://localhost:3000/peliculas/' + id, data);
+  postPelicula(data: any) {
+    return this.httpService.post('http://localhost:3000/peliculas', data);
   }
   putPelicula(id: any, data: any) {
     return this.httpService.put('http://localhost:3000/peliculas/' + id, data);
