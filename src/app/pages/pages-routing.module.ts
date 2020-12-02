@@ -14,12 +14,12 @@ const routes: Routes = [{
     },
     {
       path: '',
-      redirectTo: 'prueba',
+      redirectTo: 'peliculas',
       pathMatch: 'full',
     },
     {
       path: '**',
-      redirectTo: 'prueba',
+      redirectTo: 'peliculas',
       pathMatch: 'full',
     },
   ],
