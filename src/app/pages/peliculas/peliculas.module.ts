@@ -7,6 +7,10 @@ import { PeliculasComponent } from './components/peliculas/peliculas.component';
 import { DetallePeliculaComponent } from './components/detalle-pelicula/detalle-pelicula.component';
 import { LayoutComponent } from './components/layout/layout.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { StoreModule } from '@ngrx/store';
+import * as fromPeliculas from './reducers/peliculas.reducer';
+import { EffectsModule } from '@ngrx/effects';
+import { PeliculasEffects } from './effects/peliculas.effects';
 
 
 @NgModule({
@@ -20,7 +24,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    PeliculasRoutingModule
+    PeliculasRoutingModule,
+    StoreModule.forFeature(fromPeliculas.peliculasFeatureKey, fromPeliculas.reducer),
+    EffectsModule.forFeature([PeliculasEffects])
   ]
 })
 export class PeliculasModule { }

@@ -1,7 +1,7 @@
 <div class="container" *ngIf="Pelicula">
     <div class="row">
         <div class="col">
-            <div class="card">
+            <div class="card" (click)="EnviarPelicula()">
                 <div class="card-body">
                     <h5 class="card-title">{{Pelicula.nombre}}</h5>
                     <p class="card-text">{{Pelicula.director}}</p>
